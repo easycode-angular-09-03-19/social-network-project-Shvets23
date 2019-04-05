@@ -15,14 +15,7 @@ export class AuthGuardGuard implements  CanActivate {
     private globalAuth: GlobalAuthService
     
   ) {}
-  // canActivate(route, state) {
-  //   const userState = true;
-  //   if (!userState) {
-  //     this.router.navigate(['/about']);
-  //     return false;
-  //   }
-  //   return true;
-  // }
+  
   canActivate(route, state) {
     if (!this.globalAuth.isLogin){
       this.router.navigate(['/auth/login']);
