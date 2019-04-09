@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
-import { GlobalAuthService } from "../../../../services/global-auth.service";
-
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -19,19 +18,17 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private globalAuth: GlobalAuthService
   ) { }
 
   ngOnInit() {
-    if (this.globalAuth.isLogin) {
-      this.router.navigate(['/']);
-    }
+
   }
 
   onSubmit() {
-    this.authService.login({ ...this.loginForm.value }).subscribe((res) => {
-      this.router.navigate(['/']);
+    this.authService.login({ ...this.loginForm.value }).subscribe((res: LoginServerAnswer) => {
+      if (!res.error) {
+        this.router.navigate(['/']);
+      }
     });
   }
-
 }
