@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardGuard } from './guards/auth-guard.guard'
 const routes: Routes = [
-  { path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule' },
+  { path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule',  data: { withoutHeader: true } },
   { path: '', loadChildren: './modules/home/home.module#HomeModule',  canActivate: [AuthGuardGuard] }
 ];
 

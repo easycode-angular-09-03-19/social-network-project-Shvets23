@@ -1,0 +1,17 @@
+mat-toolbar {
+    background-color: #282727;
+    color: white;
+}
+.logo a{
+    color: white;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 95px;
+}
+.logout{
+    margin-left: 30px;
+    cursor: pointer;
+}
+.logout:hover{
+    color: #c506c5;
+}
