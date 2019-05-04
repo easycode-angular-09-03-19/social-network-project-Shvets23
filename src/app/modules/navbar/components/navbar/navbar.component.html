@@ -1,0 +1,10 @@
+<mat-toolbar *ngIf="!isHidden">
+    <div class="container d-flex justify-content-between">
+        <div class="logo"><a routerLink="/">My app</a></div>
+        <a href="" *ngIf="userId" [routerLink]="['/users/', userId]">My profile</a>
+        <div class="wrap-helper d-flex">
+            <app-notifications></app-notifications>
+            <div class="logout" (click)="logout()">Logout</div>
+        </div>
+    </div> 
+</mat-toolbar>

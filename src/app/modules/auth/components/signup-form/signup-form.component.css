@@ -1,0 +1,9 @@
+.radio-form  {
+    margin-top: 20px !important;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+.signup-form .submit-btn{
+      margin-left: auto;
+  }

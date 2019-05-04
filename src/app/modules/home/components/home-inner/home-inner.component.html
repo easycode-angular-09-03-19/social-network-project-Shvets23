@@ -1,0 +1,24 @@
+<div class="inner-wrap" [style.background-image]="'url(' + data?.homeBackground + ')'">
+  <div class="container">
+    <div class="home-info">
+      <h1>Most liked Person</h1>
+      <span class="sub-title">Be Most Wanted</span>
+      <span>{{ data?.innerText }}</span>
+    </div>
+  </div>
+  <button (click)="onClick()">Show message</button>
+</div>
+<div class="inner-info d-flex align-items-center">
+    <div class="container">
+      <ul>
+        <li>{{ data?.cities }} Cities</li>
+        <li>{{ data?.countries }} Countries</li>
+        <li>In {{ data?.regions }} Regions In The World</li>
+      </ul>
+      <div class="info-desc">
+          You can be one of the winners and we will introduce you to the world
+      </div>
+    </div>
+  
+</div>
+
