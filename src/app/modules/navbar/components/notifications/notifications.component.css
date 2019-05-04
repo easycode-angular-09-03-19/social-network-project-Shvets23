@@ -83,3 +83,13 @@ ul{
     top: 5px;
     right: 10px;
 }
+
+.notification-helper{
+    width: 100vw;
+    height: 100vh;
+    background: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}

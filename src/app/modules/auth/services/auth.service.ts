@@ -42,14 +42,4 @@ export class AuthService {
       })
     );
   }
-  logout(cred): Observable<LoginServerAnswer> {
-    return this.http.post<LoginServerAnswer>(`${this.apiUrl}/public/auth/login`, cred).pipe(
-      map((res: LoginServerAnswer): LoginServerAnswer => {
-        if (!res.error) {
-          localStorage.removeItem('sn_app_token');
-        }
-        return res;
-      })
-    );
-  }
 }

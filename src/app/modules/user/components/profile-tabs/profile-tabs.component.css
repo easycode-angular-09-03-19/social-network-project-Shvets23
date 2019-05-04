@@ -1,0 +1,23 @@
+a{
+    color: black;
+}
+.tab{
+    padding: 12px 9px;
+}
+.tab-count{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+.tab-name{
+    text-transform: uppercase;
+}
+.active-tab{
+    color: #7303c0;
+    background-color: #f2f2f2;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: rgba(242,242,242,.5);
+}

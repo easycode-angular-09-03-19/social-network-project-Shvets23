@@ -28,7 +28,6 @@ export class ChallengeCardComponent implements OnInit {
 
   ngOnInit() {
     this.date = new Date(this.challenge.start_date);
-    // this.globalDate = new Date(this.date);
     this.strDate = `${this.monthNames[this.date.getMonth()]} ${this.date.getDay()}  ${this.date.getFullYear()}`
   }
 

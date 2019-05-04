@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import {CanActivate, Router} from "@angular/router";
+import { CanActivate, Router } from "@angular/router";
 import { GlobalAuthService } from "../services/global-auth.service";
 
 
@@ -20,9 +20,7 @@ export class AuthGuardGuard implements  CanActivate {
     if (!this.globalAuth.isLogin){
       this.router.navigate(['/auth/login']);
       return false;
-    } else {
-      return true;
     }
-
+    return true;
   }
 }

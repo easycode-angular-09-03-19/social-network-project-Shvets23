@@ -1,0 +1,14 @@
+<div class="selfies-section">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let img of images">
+        <div class="col-4">
+          <app-img-preview
+            [img]="img"
+          ></app-img-preview>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+

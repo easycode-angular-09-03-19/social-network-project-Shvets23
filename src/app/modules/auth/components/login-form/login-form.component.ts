@@ -29,6 +29,8 @@ export class LoginFormComponent implements OnInit {
       if (!res.error) {
         this.router.navigate(['/']);
       }
+    }, (err) => {
+      alert(err.error.message)
     });
   }
 }

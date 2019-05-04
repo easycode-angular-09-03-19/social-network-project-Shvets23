@@ -2,7 +2,7 @@ mat-toolbar {
     background-color: #282727;
     color: white;
 }
-.logo a{
+.logo a, a{
     color: white;
 }
 .mat-toolbar-row, .mat-toolbar-single-row {

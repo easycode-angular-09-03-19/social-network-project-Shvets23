@@ -1,35 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './common/components/navbar/navbar.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { NotificationsComponent } from './common/components/notifications/notifications.component';
 import { AuthService } from './modules/auth/services/auth.service'
+import { NavbarModule } from './modules/navbar/navbar.module';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    NotificationsComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     ToastModule,
-    MatGridListModule
-
+    MatGridListModule,
+    NavbarModule
   ],
-  providers: [MessageService, AuthService],
+  providers: [
+    MessageService, 
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,18 @@
+<div class="user-controls-wrap d-flex align-items-center justify-content-around">
+  <div class="user-avatar-wraper">
+    <div class="user-avatar">
+      <img [src]="user?.avatar" alt="">
+    </div>
+  </div>
+  <div class="profile-data">
+    <div class="user-name-controls">{{ user?.full_name }}</div>
+    <div class="user-country">{{ user?.country }}</div>
+  </div>
+  <div class="points-wrap">
+    <div class="points-count">{{ user?.rank.points }}</div>
+    <div class="point-helper d-flex align-items-center">
+      <img src="/assets/points-stars.png" alt="">
+      <div class="points-desc">Points</div>
+    </div> 
+  </div>
+</div>

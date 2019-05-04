@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../../../services/notification.service';
-
+import { NotificationService } from '../../services/notification.service';
+ 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
@@ -16,9 +16,8 @@ export class NotificationsComponent implements OnInit {
   ngOnInit() {
     this.notificationService.getNotification().subscribe((data) => {
       this.notifications = data;
-      console.log(this.notifications, 'work1');
     }, (err)=>{
-      console.log(err, 'err')
+      console.log(err, 'err1')
     })
   }
   showNotification() {
