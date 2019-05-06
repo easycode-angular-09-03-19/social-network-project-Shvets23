@@ -31,6 +31,7 @@ svg{
     background: transparent;
     border: none;
 }
+
 .modal-control{
     position: absolute;
     top: 62px;
@@ -38,6 +39,10 @@ svg{
     left: -98px;
     z-index: 9;
     color: black;
+    display: none;
+}
+.dropdown-btn:hover .modal-control{
+    display: block;
 }
 .modal-control::before{
     position: absolute;

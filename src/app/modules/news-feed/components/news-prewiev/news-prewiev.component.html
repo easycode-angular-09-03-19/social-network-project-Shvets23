@@ -1,0 +1,24 @@
+<div class="news-item">
+  <div class="row">
+    <div class="col-3">
+      <div class="item-info d-flex flex-row flex-lg-column flex-wrap align-items-center">
+        <div class="author-info-wrapper d-flex flex-column align-items-center">
+          <a href="" [routerLink]="['/', news.owner._id]">
+            <img [src]="news.owner.avatar" alt="">
+            <div class="author-name">{{news.owner.full_name}}</div>
+          </a>
+          <div class="author-country">{{news.owner.country}}</div>
+        </div>
+        <div class="upload-info-wrapper d-flex flex-column align-items-center">
+          <span>Upload</span>
+          <span>{{ news.date | date: "MMMM, d, y" }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="item-content d-flex flex-column" [style.background-image]="'url(' +news?.pictures[0].url + ')'">
+        <!-- <img [src]="news?.pictures[0].url" alt=""> -->
+      </div>
+    </div>
+  </div>
+</div>

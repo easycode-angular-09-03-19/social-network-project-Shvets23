@@ -24,4 +24,17 @@ export class ProfileSelfiesComponent implements OnInit {
       }
     })
   }
+  loadPhotos(input) {
+    const files = Array.from(input.files);
+    console.log(files);
+    this.userService.uploadPhotos(files).subscribe((res)=>{
+      this.id = this.route.snapshot.params.id;
+      this.userService.getImages(this.id).subscribe((images: Images) => {
+      if(images) {
+        this.images = images.images;
+      }
+    })
+    });
+    
+  }
 }

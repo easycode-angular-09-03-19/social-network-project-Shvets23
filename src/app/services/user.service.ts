@@ -32,6 +32,12 @@ export class UserService {
     formData.append('coverImg', file);
     return this.http.post(`${this.apiUrl}/public/users/upload-cover/${id}`, formData)
   }
+  uploadPhotos(files: any[]) {
+    const formData = new FormData();
+    files.forEach((file) => formData.append('userPhotos', file));
+    const id = this.globalAuth.userId;
+    return this.http.post(`${this.apiUrl}/public/users/upload-photos/${id}`, formData);
+  }
   getImages(id: string) {
     return this.http.get(`${this.apiUrl}/public/users/my-images/${id}`)
   }

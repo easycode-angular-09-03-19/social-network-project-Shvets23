@@ -13,7 +13,7 @@ export class HeaderNavComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.navService.getWinners().subscribe((res)=>{
+    this.navService.getNews().subscribe((res)=>{
       console.log(res, 'navHeader')
     })
   }

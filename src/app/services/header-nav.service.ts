@@ -11,7 +11,7 @@ export class HeaderNavService {
   constructor(
     private http: HttpClient
   ) { }
-  getWinners(){
+  getNews(){
     return this.http.get(`${this.apiUrl}/public/news?page=1&count=15`)
   }
 }

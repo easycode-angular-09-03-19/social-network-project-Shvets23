@@ -2,3 +2,10 @@
     padding-top: 80px;
     background-color: #f2f2f2;
 }
+.upload-photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin-top: 30px;
+}

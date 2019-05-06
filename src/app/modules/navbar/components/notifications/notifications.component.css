@@ -11,6 +11,12 @@
 .notification-icon{
     position: relative;
 }
+.notification-modal{
+    display: none;
+}
+.notification-icon:hover .notification-modal{
+    display: block;
+}
 .notification-count{
     position: absolute;
     top: -3px;
