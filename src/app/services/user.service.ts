@@ -35,4 +35,17 @@ export class UserService {
   getImages(id: string) {
     return this.http.get(`${this.apiUrl}/public/users/my-images/${id}`)
   }
+  getFavourites(id: string) {
+    return this.http.get(`${this.apiUrl}/public/users/my-favorites/${id}?part=1&limit=20`)
+  }
+  getFollowings(id: string) {
+    return this.http.get(`${this.apiUrl}/public/users/my-followers-followings/${id}?part=1&limit=6&path=followers`)
+  }
+  getFollowers(id: string) {
+    return this.http.get(`${this.apiUrl}/public/users/my-followers-followings/${id}?part=1&limit=6&path=followings`)
+  }
+  startFollow(id) {
+    return this.http.put(`${this.apiUrl}/public/users/following/${id}`, {})
+  }
+
 }

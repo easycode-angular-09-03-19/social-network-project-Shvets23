@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { user } from '../../interfaces/user.interface';
-
+import { ActivatedRoute } from "@angular/router";
+import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
 @Component({
   selector: 'app-profile-tabs',
   templateUrl: './profile-tabs.component.html',
@@ -8,8 +10,15 @@ import { user } from '../../interfaces/user.interface';
 })
 export class ProfileTabsComponent implements OnInit {
   @Input() user: user;
-  @Input() activeTab;
-  constructor() { }
+  
+  activeTab: Observable<string>;
 
-  ngOnInit() { }
+  constructor(
+    private route: ActivatedRoute
+
+  ) { }
+
+  ngOnInit() { 
+    this.activeTab = this.route.queryParams.pipe(map((params) => params.tab));
+  }
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { CurrentUserStoreService } from './services/current-user-store.service';
+import { GlobalAuthService } from './services/global-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,13 @@ import { CurrentUserStoreService } from './services/current-user-store.service';
 export class AppComponent implements OnInit{
   title = 'lesson7';
   constructor(
-    private currentUser: CurrentUserStoreService
-
+    private currentUser: CurrentUserStoreService,
+    private globalAuth: GlobalAuthService
   ) {}
   ngOnInit(): void {
-    this.currentUser.initCurrentUser();
+    if (this.globalAuth.token){
+      this.currentUser.initCurrentUser();
+    }
   }
   onClick() {
 

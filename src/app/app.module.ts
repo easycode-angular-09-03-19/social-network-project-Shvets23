@@ -12,9 +12,10 @@ import { AuthService } from './modules/auth/services/auth.service'
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,72 @@
+.user-control-helper{
+    position: absolute;
+    top: 0;
+    widows: 100vw;
+    height: 100vh;
+    width: 99vw;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+.user-controls-wrap{
+    position: relative;
+    margin-left: 20px;
+    z-index: 3;
+}
+.user-controls-wrap button:focus{
+    outline: none;
+    box-shadow: none;
+}
+img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+svg{
+    width: 15px;
+    color: white;
+}
+.dropdown-btn{
+    background: transparent;
+    border: none;
+}
+.modal-control{
+    position: absolute;
+    top: 62px;
+    background: white;
+    left: -98px;
+    z-index: 9;
+    color: black;
+}
+.modal-control::before{
+    position: absolute;
+    content: "";
+    bottom: 99%;
+    right: 50px;
+    border-style: solid;
+    border-width: 0 14px 12px;
+    border-color: transparent transparent #fff;
+
+}
+ul{
+    margin: 0;
+    padding-left: 0;
+}
+.modal-control li{
+    list-style: none;
+    padding: 12px 31px;
+}
+.modal-control a, .modal-control svg{
+    color: black;
+    margin-right: 15px;
+}
+.modal-control a:hover{
+    text-decoration: none;
+}
+.modal-control li + li{
+    border-top: 1px solid #e6e6e6;
+}
+.modal-control li:hover{
+    background: #e6e6e6;
+}

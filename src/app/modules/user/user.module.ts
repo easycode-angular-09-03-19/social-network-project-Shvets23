@@ -9,6 +9,10 @@ import { ProfileControlsComponent } from './components/profile-controls/profile-
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { ProfileSelfiesComponent } from './components/profile-selfies/profile-selfies.component';
 import { ImgPreviewComponent } from '../../common/components/img-preview/img-preview.component';
+import { ProfileFavouritesComponent } from './components/profile-favourites/profile-favourites.component';
+import { ProfileFollowersComponent } from './components/profile-followers/profile-followers.component';
+import { ProfileFollowingComponent } from './components/profile-following/profile-following.component';
+import { UserPreviewComponent } from '../../common/components/user-preview/user-preview.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ImgPreviewComponent } from '../../common/components/img-preview/img-pre
     ProfileControlsComponent, 
     ProfileTabsComponent, 
     ProfileSelfiesComponent,
-    ImgPreviewComponent
+    ImgPreviewComponent,
+    ProfileFavouritesComponent,
+    ProfileFollowersComponent,
+    ProfileFollowingComponent,
+    UserPreviewComponent
   ],
   imports: [
     CommonModule,

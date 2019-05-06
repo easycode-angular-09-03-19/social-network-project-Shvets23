@@ -1,22 +1,14 @@
-<div class="tabs-wrap d-flex justify-content-between">
-  <a href="#" class="tab active-tab d-flex flex-column align-items-center">
-    <div class="tab-count">{{ user?.my_images.length }}</div>
-    <div class="tab-name">No. selfies</div>
-  </a>
-  <a href="#" class="tab d-flex flex-column align-items-center">
-    <div class="tab-count">{{ user?.glories.length }}</div>
-    <div class="tab-name">My Glories</div>
-  </a>
-  <a href="#" class="tab d-flex flex-column align-items-center">
-    <div class="tab-count">{{ user?.favourites.length }}</div>
-    <div class="tab-name">Favourites</div>
-  </a>
-  <a href="#" class="tab d-flex flex-column align-items-center">
-    <div class="tab-count">{{ user?.followers.length }}</div>
-    <div class="tab-name">Followers</div>
-  </a>
-  <a href="#" class="tab d-flex flex-column align-items-center">
-    <div class="tab-count">{{ user?.followings.length }}</div>
-    <div class="tab-name">Followings</div>
-  </a>
-</div>
+<ng-container [ngSwitch]="activeTab | async">
+    <ng-container *ngSwitchCase="'selfies'">
+        <app-profile-selfies></app-profile-selfies>
+    </ng-container>
+    <ng-container *ngSwitchCase="'favourites'">
+        <app-profile-favourites></app-profile-favourites>
+    </ng-container>
+    <ng-container *ngSwitchCase="'followings'">
+            <app-profile-following></app-profile-following>
+    </ng-container>
+    <ng-container *ngSwitchCase="'followers'">
+            <app-profile-followers></app-profile-followers>
+    </ng-container>
+</ng-container>

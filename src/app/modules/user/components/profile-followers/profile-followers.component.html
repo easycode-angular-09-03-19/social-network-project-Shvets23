@@ -1,0 +1,9 @@
+<div class="followers-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-4" *ngFor="let user of users">
+          <app-user-preview [user]='user'></app-user-preview>
+        </div>
+      </div>
+    </div>
+  </div>

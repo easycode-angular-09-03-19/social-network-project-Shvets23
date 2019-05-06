@@ -3,26 +3,9 @@
   [isCurrentUser]="authUserId === id"
   (upload)="uploadCover($event)"
 ></app-profile-cover>
-<div class="profile-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <app-profile-controls
-          [user]="user"
-        ></app-profile-controls>
-      </div>
-      <div class="col-6">
-        <app-profile-tabs
-          [user]="user"
-          [activeTab]="activeTab"
-        ></app-profile-tabs>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="tabs-content bg-light-primary" ngSwitch="{{activeTab}}">
-  <app-profile-selfies 
-    class="profile-selfies" 
-    *ngSwitchCase="'selfies'"
-    ></app-profile-selfies>
-</div>
+<app-profile-controls
+  [user]="user"
+></app-profile-controls>
+<app-profile-tabs
+  [user]="user"
+></app-profile-tabs>

@@ -32,6 +32,9 @@
     background: #fff;
     color: black;
     font-size: 14px;
+    z-index: 9;
+    max-height: 330px;
+    overflow-y: scroll;
 }
 .empty-notifications{
     position: absolute;
