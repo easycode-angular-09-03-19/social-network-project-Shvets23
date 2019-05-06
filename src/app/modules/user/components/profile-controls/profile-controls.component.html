@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="user-controls-wrap d-flex align-items-center justify-content-around">
+        <div class="user-avatar-wraper">
+          <div class="user-avatar">
+            <img [src]="user?.avatar" alt="">
+          </div>
+        </div>
+        <div class="profile-data">
+          <div class="user-name-controls">{{ user?.full_name }}</div>
+          <div class="user-country">{{ user?.country }}</div>
+        </div>
+        <div class="points-wrap">
+          <div class="points-count">{{ user?.rank.points }}</div>
+          <div class="point-helper d-flex align-items-center">
+            <img src="/assets/points-stars.png" alt="">
+            <div class="points-desc">Points</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="tabs-wrap d-flex justify-content-between" *ngIf="user">
+        <ul>
+          <li *ngFor="let item of tabList">
+            <a 
+              href="" 
+              class="tab  d-flex flex-column align-items-center"
+              [routerLink]="['/users', user?._id]"
+              [queryParams]="{ tab: item.tab }"
+              [ngClass]="{ activeTab: (activeTab | async) === item.tab }"
+              >
+              <span class="tab-count">{{ user[item.count]?.length }}</span>
+              <span class="tab-name">{{ item.text }}</span>
+            </a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>

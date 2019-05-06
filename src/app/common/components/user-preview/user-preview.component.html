@@ -1,0 +1,13 @@
+<div class="follower-item d-flex flex-column align-items-center">
+    <div class="follower-item-bg">
+      <div class="bg-folder" [style.background-image]="'url(' + user.cover + ')'"></div>
+    </div>
+    <a href="" [routerLink]="['/users', user?._id]"  class="follower-item-link d-flex flex-column align-items-center">
+      <div class="user-avatar small">
+        <img [src]="user.avatar" alt="">
+      </div>
+      <span class="follower-name">{{ user.full_name }}</span>
+    </a>
+    <span class="follower-city">{{ user.city }}</span>
+    <button class="btn btn-following" [class.btn-follow]="status == 'User was deleted from the followings.'" (click)="follow(user._id)">{{ status | i18nSelect: statusMap }}</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="selfies-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 upload-photo">
+          <input
+          type="file"
+          class="upload-photos"
+          multiple
+          (change)="loadPhotos($event.target)"
+        >
+      </div>
+      <ng-container *ngFor="let img of images">
+        <div class="col-4">
+          <app-img-preview
+            [img]="img"
+          ></app-img-preview>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
